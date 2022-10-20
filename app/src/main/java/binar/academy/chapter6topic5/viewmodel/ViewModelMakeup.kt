@@ -12,12 +12,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ViewModelMakeup
-@Inject constructor(var api: RestfulAPI) : ViewModel(){
-    var liveDataMakeup: MutableLiveData<List<ResponseDataMakeupItem>>
-
-    init {
-        liveDataMakeup = MutableLiveData()
-    }
+@Inject constructor(private var api: RestfulAPI) : ViewModel(){
+    var liveDataMakeup: MutableLiveData<List<ResponseDataMakeupItem>> = MutableLiveData()
 
     fun getliveDataMakeup() : MutableLiveData<List<ResponseDataMakeupItem>> {
         return  liveDataMakeup

@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setVmtoAdapter(){
 
-        val viewModel = ViewModelProvider(this).get(ViewModelMakeup::class.java)
+        val viewModel = ViewModelProvider(this)[ViewModelMakeup::class.java]
         viewModel.callApi()
         viewModel.getliveDataMakeup().observe(this, Observer {
 
